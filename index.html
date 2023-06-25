@@ -1,70 +1,103 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>FocusTime Software</title>
+    <title>A TODO LIST WEB APP</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.js"></script>
 </head>
 <style>
-    .cl_white{
-        color: rgb(255, 255, 255);
+    body {
+        background-image: url("images/bg5.jpg");
+        background-size: cover;
+        /* Adjust as needed */
+        background-repeat: no-repeat;
     }
-    section{
+
+    .cl_black {
+        color: black;
+    }
+
+    section {
         width: 100vw;
         height: 100vh;
         padding: 50px;
     }
+
+    .center-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+    }
+
+    .center-content h1 {
+        margin-bottom: 20px;
+        color: black;
+    }
+
+    .center-content .col-md-5 {
+        margin-bottom: 30px;
+    }
+
+    .center-content .thumbnail img {
+        width: 50%;
+    }
 </style>
 <!-- Body STARTS from here -->
-
 <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">UserPage</a>
+                <a class="navbar-brand" href="#">TASKY</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="register.php">Register</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="member_page.php">Customer's Section</a></li>
+                <li><a href="addtask.php">Add Task</a></li>
+                <li><a href="list.php">List Task</a></li>
+                <!-- <li><a href="member_page.php">Customer's Section</a></li> -->
             </ul>
         </div>
     </nav>
     <!-- Section Goes Here -->
-    <section id="home" style="background: url(images/bd.jpg); background-size: 100% 100%; " class="cl_white text-center">
-        <h1>Testing Page</h1>
-        <p class="lead">Just a Tagline</p>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
+    <section id="home" class="cl_black text-center">
+        <div class="container center-content">
+            <h1 class="cl_black">Sam Web-based Todo App</h1>
+            <p class="lead cl_black">Access Functionalities</p>
+            <div class="container">
+                <div class="col-md-5">
                     <div class="page-header">
-                        <h3>Login Here</h3>
+                        <h3 class="cl_black">Add a Task</h3>
                     </div>
-                    <a href="login.php" class="thumbnail"><img width="60%" src="images/login.jpg"></a>
+                    <a href="addtask.php" class="thumbnail"><img src="images/plus.jpg" alt=""></a>
+                    <div>
+                        <h4 class="cl_black">How to add a task:</h4>
+                        <p class="cl_black">
+                            To add a new task, click on the "Add Task" button above. You will be redirected to the Add Task page where you can enter the details of your task and save it.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="page-header">
-                        <h3>Register Here</h3>
+                        <h3 class="cl_black">List Tasks</h3>
                     </div>
-                    <a href="register.php" class="thumbnail"><img width="60%" src="images/reg.jpg"></a>
-                </div>
-                <div class="col-md-4">
-                    <div class="page-header">
-                        <h3>Admin Page</h3>
+                    <a href="list.php" class="thumbnail"><img src="images/list.jpg" alt=""></a>
+                    <div>
+                        <h4 class="cl_black">How to list tasks:</h4>
+                        <p class="cl_black">
+                            To view the list of tasks, click on the "List Task" button above. You will be redirected to the List Task page where you can see all the tasks you have added.
+                        </p>
                     </div>
-                    <a href="#" class="thumbnail"><img width="75%" src="images/admin.jpg"></a>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="navbar navbar-default navbar-fixed-button">
+    <footer class="navbar navbar-default navbar-fixed-bottom" style="background-color: #f8f8f8; border-top: 1px solid #ddd; padding: 10px 0;">
         <div class="container">
-            <p class="text-center" style="padding: 12px;">Copyright - Reserved Happyo inc. 2023</p>
+            <p class="text-center cl_black" style="margin: 0; font-size: 14px;">&copy; Samuel Softwares. All rights reserved.</p>
         </div>
-    </footer> 
+    </footer>
 </body>
-
 </html>

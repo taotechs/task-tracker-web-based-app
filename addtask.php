@@ -3,7 +3,7 @@ session_start(); // Start session here
 ?>
 <?php
 include("connection.php");
-if (isset($_POST['login'])) {
+if (isset($_POST['list'])) {
     $user_email = $_POST['email'];
     $user_password = $_POST['password'];
     $check_user = "SELECT * FROM user WHERE user_email='$user_email' AND user_password='$user_password'";
@@ -19,7 +19,7 @@ if (isset($_POST['login'])) {
         echo "<script>window.open('member_page.php', '_self')</script>";
         exit; // Add this line to stop executing further code
     } else {
-        echo "<script>alert('Kindly Check Your Login Credentials')</script>";
+        echo "<script>alert('Kindly Check Your list Credentials')</script>";
     }
 }
 ?>
@@ -28,7 +28,7 @@ if (isset($_POST['login'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Page</title>
+    <title>list Page</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
@@ -46,39 +46,39 @@ if (isset($_POST['login'])) {
 </style>
 <!-- Body STARTS from here -->
 <body>
-    <nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">UserPage</a>
+                <a class="navbar-brand" href="#">TASKY</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="register.php">Register</a></li>
-                <li class="active"><a href="login.php">Login</a></li>
-                <li><a href="member_page.php">Customer's Section</a></li>
+                <li class="active"><a href="addtask.php">Add Task</a></li>
+                <li><a href="list.php">List Task</a></li>
+                <!-- <li><a href="member_page.php">Customer's Section</a></li> -->
             </ul>
         </div>
     </nav>
     <!-- Section Goes Here -->
-    <section id="home" style="background: url(images/bd.jpg); background-size: 100% 100%" class="cl_white text-center">
+    <section id="home" style="background: url(images/bg5.jpg); background-size: 100% 100%" class="cl_white text-center">
         <div class="container">
             <div class="row">
                 <div class="col-md-3"> </div>
                 <div class="col-md-6">
                     <div class="page-header">
-                        <h3>Login</h3>
+                        <h3>Add Task</h3>
                     </div>
-                    <form role="form" action="login.php" method="post" class="col-md-8 col-md-offset-2">
+                    <form role="form" action="./addtaskcode.php" method="post" class="col-md-8 col-md-offset-2">
                         <div class="form-group">
-                            Your email:
-                            <input class="form-control" name="email" placeholder="Email Please" type="email" required />
+                            Title:
+                            <input class="form-control" name="title" placeholder="Task title" type="text" required />
                         </div>
                         <div class="form-group">
-                            Password:
-                            <input class="form-control" name="password" type="password" required />
+                            Description:
+                            <textarea class="form-control" rows="10" name="description" placeholder="Task description"></textarea>
                         </div>
                         <div class="form-group">
-                            <input class="btn btn-success display-block" name="login" value="login" type="submit" />
+                            <input class="btn btn-success display-block" name="add" value="Add Task" type="submit" />
                         </div>
                     </form>
                 </div>
